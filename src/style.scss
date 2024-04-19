@@ -1,0 +1,53 @@
+$main-gap: 20px; // zmienna w sass
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul { // tutaj opisujemy jak ma wyglądać każda nasza lista ul
+  margin-bottom: $main-gap;
+
+  li {
+    list-style-type: none;
+  }
+}
+
+h2 {
+  margin-bottom: $main-gap;
+}
+.cv-main {
+  max-width: 850px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-areas: "header header" "personal details"; // tu mówimy o kolejności wyświetlania naszych kontenerów
+  grid-template-columns: 200px 1fr; // tu mówimy jakie wymiary mają mieć nasze kolumny (pierwsza na sztywno zawsze ma mieć 200px a druga reszte obszaru(dynamicznie będzie się zmieniać))
+  // 1fr 1fr - to było by podzielenie w stosunku 1:1 obszaru na stronie i by się dynamicznie zmieniało w zależnośni od wielkości ekranu
+  // 1fr 2fr - to było by podzielenie w stosunku 1:2 obszaru
+;
+}
+
+.cv-header {
+  grid-area: header;
+  padding: $main-gap;
+  text-align: center;
+}
+.cv-personal {
+  padding: $main-gap;
+  background-color: #939179;
+  text-align: center;
+
+  .cv-photo {
+    width: 100%; // ograniczam wielkość
+    border-radius: 50%; // sprawiam że ma zaokrąglone rogi (efekt koła przy 50%)
+    margin-top: $main-gap;
+    margin-bottom: $main-gap;
+  }
+}
+.cv-details {
+  padding: $main-gap;
+  text-align: center;
+  background-color: aliceblue;
+}
